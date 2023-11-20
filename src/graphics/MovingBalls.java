@@ -1,25 +1,20 @@
 package graphics;
 import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.*;
-public class ballCollision {
+public class MovingBalls {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Ball Collision");
-        frame.setSize(700,400);
+        JFrame frame = new JFrame("Moving Balls");
+        frame.setSize(700,700);
         frame.setLocation(50,0);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Random rand = new Random();
-        System.out.println(rand.nextDouble());
-        System.out.println(rand.nextDouble());
-        System.out.println(rand.nextInt(1000));
         int r,g,b;
         r = rand.nextInt(255);
         g = rand.nextInt(255);
         b = rand.nextInt(255);
         Color color = new Color(r,g,b);
-        MyPanel panel = new MyPanel( 50,600, 300, 20, 30);
+        MyPanel panel = new MyPanel( 50,700, 670, 20, 30);
         frame.setContentPane(panel);
         frame.setVisible(true);
         try {
@@ -54,12 +49,16 @@ class MyPanel extends JPanel{
         // variables for color
         int r,g,b;
         ball= new Ball[n];
-        for ( int i = 0; i < n ; i++){
+        int i =0;
+        while ( i < n){
             radius = minradius + (int)Math.ceil(rand.nextInt(maxradius-minradius));
             xc = rand.nextInt(width -radius);
             yc =rand.nextInt(height- radius);
             dx = rand.nextInt(8);
             dy = rand.nextInt(8);
+            if ( dx == 0 || dy == 0){
+                continue;
+            }
             r = rand.nextInt(255);
             g = rand.nextInt(255);
             b = rand.nextInt(255);
@@ -74,6 +73,7 @@ class MyPanel extends JPanel{
             }
             if ( j == i )
                 ball[i] = new Ball(xc,yc,radius,dx,dy,color);
+            i++;
         }
 
     }

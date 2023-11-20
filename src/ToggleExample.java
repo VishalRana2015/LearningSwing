@@ -11,7 +11,7 @@ class ToggleExample extends JFrame implements ActionListener{
     static JFrame frame;
 
     public static void main(String[] args) {
-        frame = new JFrame("New Title");
+        frame = new JFrame("Toggle On/Off Button");
         frame.setSize(400,400);
         frame.setLocation(100,400);
         frame.setVisible(true);
@@ -21,9 +21,9 @@ class ToggleExample extends JFrame implements ActionListener{
 
         frame.setContentPane(tbutton);
 
-        ImageIcon onimage = new ImageIcon (".\\Images\\onToggleButton.png");
+        ImageIcon onimage = new ImageIcon ("images/onToggleButton.png");
         tbutton.setSelectedIcon(onimage);
-        ImageIcon offimage = new ImageIcon( ".\\Images\\offToggleButton.png");
+        ImageIcon offimage = new ImageIcon( "images/offToggleButton.png");
         tbutton.setIcon(offimage);
         frame.setContentPane(tbutton);
         BevelBorder bdraised = new BevelBorder( BevelBorder.RAISED);

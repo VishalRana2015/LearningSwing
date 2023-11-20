@@ -10,7 +10,7 @@ import java.io.*;
 
 public class CustomFileFilterExample {
     public static void main(String[] args) {
-        CustomFileFilterdoc filter = new CustomFileFilterdoc("Cusom FileFilter","pdf","doc","mp4");
+        CustomFileFilterdoc filter = new CustomFileFilterdoc("Custom FileFilter","pdf","doc","mp4");
         JFileChooser filechooser = new JFileChooser();
         JFrame frame  = new JFrame("Custrom File Filter Doc");
         frame.setLocation(50,0);
