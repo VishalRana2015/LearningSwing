@@ -1,0 +1,4 @@
+With the beautiful swing package, we've got a new listener called the
+CaretListener, which will listen caret update events. ... dot represents the
+current caret position. mark represents the selection end other than the dot.
+Note that dot can be greater than mark or mark can be greater the dot.
